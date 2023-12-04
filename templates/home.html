@@ -1,0 +1,32 @@
+{% extends './base.html' %}
+
+{% block title %}Transmisión en vivo{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>Bienvenido a la Transmisión de Seguridad</h1>
+<video id="video" autoplay></video>
+<script>
+    // Solicitar acceso a la cámara
+    if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                // Asignar el stream de la cámara al elemento de video
+                var video = document.getElementById('video');
+                video.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.log("Error al acceder a la cámara: ", error);
+            });
+    } else {
+        alert('Su navegador no soporta getUserMedia');
+    }
+</script>
+<a class="btn btn-secondary" href="{{ url_for('logout') }}">Salir</a>
+
+
+{% endblock %}
+

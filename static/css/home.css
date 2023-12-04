@@ -1,0 +1,32 @@
+html,/* Establece el estilo general del cuerpo de la página */
+
+/* Establece el estilo general del cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Utiliza toda la altura de la ventana gráfica */
+    background: linear-gradient(to bottom, #6D80F9, #f381c2); /* Degradado de colores */
+}
+
+/* Estilos para el encabezado */
+h1 {
+    margin-bottom: 2px; /* Espacio debajo del encabezado */
+}
+
+/* Estilos para el elemento de video */
+video {
+    width: 100%; /* Ancho del video */
+    border: 5px solid #A2F78D; /* Borde opcional para el video */
+}
+
+/* Estilos para el botón de salida */
+.btn-secondary {
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 50%; /* Posición desde la parte inferior de la página */
+    left: 85%; /* Posición desde la izquierda de la página */
+    transform: translateX(-50%); /* Centra el botón horizontalmente */
+}
